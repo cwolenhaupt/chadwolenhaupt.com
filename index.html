@@ -200,6 +200,28 @@
       color: var(--ink);
     }
 
+    .rt-thumbnail {
+      display: block;
+      margin-top: 22px;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .rt-thumbnail img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      object-position: center;
+      border: 2px solid var(--ink);
+      background: var(--paper);
+      filter: saturate(.9) contrast(1.02);
+    }
+
+    .rt-thumbnail:hover img {
+      filter: saturate(.96) contrast(1.04);
+    }
+
     .panel-link {
       display: inline-flex;
       position: relative;
@@ -402,6 +424,9 @@
             <p class="panel-label">The writing</p>
             <h2>Real Talk</h2>
             <p>Weekly writing for second-half men who checked the boxes and still feel off. It is not a performance of certainty. It is a place to tell the truth about drift, fatherhood, work, faith, and the life underneath the résumé.</p>
+            <a class="rt-thumbnail" href="https://chadsrealtalk.substack.com" aria-label="Open Real Talk on Substack">
+              <img src="assets/real-talk-checklist-lie.jpeg" alt="Real Talk thumbnail for The Checklist Lie" loading="lazy">
+            </a>
           </div>
           <a class="panel-link" href="https://chadsrealtalk.substack.com">Read Real Talk →</a>
         </article>
