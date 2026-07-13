@@ -3,22 +3,23 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chad Wolenhaupt</title>
-  <meta name="description" content="Chad Wolenhaupt. Real Talk, books, and contact for second-half men." />
+  <title>Chad Wolenhaupt — Fortified Register Mockup</title>
+  <meta name="description" content="Mockup only: Chad Wolenhaupt fortified manuscript site direction." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='8' y='8' width='48' height='48' fill='%23E8E0CD' stroke='%232B2620' stroke-width='2'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-size='32' fill='%232B2620'%3EW%3C/text%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Marcellus&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='8' y='8' width='48' height='48' fill='%23E3DBC7' stroke='%232B2620' stroke-width='2'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-size='32' fill='%232B2620'%3EW%3C/text%3E%3C/svg%3E">
   <style>
     :root {
       --ink: #2B2620;
-      --paper: #E8E0CD;
-      --paper-deep: #DDD2BA;
+      --paper: #E3DBC7;
+      --paper-deep: #D7CCB2;
       --oxblood: #5E2621;
       --rust: #9B4A2B;
       --faded: #6B6459;
       --font-display: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
       --font-body: 'Source Serif 4', Georgia, serif;
+      --font-inscription: 'Marcellus', Georgia, serif;
       --measure: 66ch;
       --space: 8px;
     }
@@ -89,13 +90,29 @@
       max-width: var(--measure);
     }
 
+    .kicker,
+    .margin-label,
+    .panel-label,
+    .colophon {
+      font-family: var(--font-inscription);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+    }
+
     .margin-label {
       grid-column: 1;
       justify-self: end;
       text-align: right;
-      font: italic 400 14px/1.5 var(--font-body);
+      font-size: 13px;
+      line-height: 1.5;
       color: var(--faded);
       padding-top: 4px;
+    }
+
+    .margin-label--large {
+      font-size: 20px;
+      line-height: 1.25;
     }
 
     .hero {
@@ -107,16 +124,15 @@
       grid-column: 1 / -1;
       max-width: none;
       margin: 0 0 58px;
-      font: 600 12px/1.4 var(--font-body);
-      text-transform: uppercase;
-      letter-spacing: .14em;
+      font-size: 13px;
+      line-height: 1.4;
       color: var(--faded);
     }
 
     .name {
       margin: 0;
       font-family: var(--font-display);
-      font-weight: 400;
+      font-weight: 700;
       font-size: clamp(40px, 6vw, 58px);
       line-height: 1.1;
       letter-spacing: -0.025em;
@@ -133,17 +149,7 @@
     .hero-rule {
       width: min(100%, 560px);
       margin-top: 40px;
-      border-top: 1px solid var(--ink);
-      position: relative;
-    }
-
-    .hero-rule::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 3px;
-      border-top: 1px solid var(--ink);
+      border-top: 6px solid var(--ink);
     }
 
     .panels {
@@ -154,7 +160,7 @@
     }
 
     .panel {
-      border: 1px solid var(--ink);
+      border: 2px solid var(--ink);
       border-radius: 0;
       padding: 28px 24px 24px;
       background: transparent;
@@ -164,8 +170,8 @@
       justify-content: space-between;
     }
 
-    .panel--writing { border-top: 3px solid var(--rust); }
-    .panel--books { border-top: 3px solid var(--oxblood); }
+    .panel--writing { border-top: 4px solid var(--rust); }
+    .panel--books { border-top: 4px solid var(--oxblood); }
 
     .panel:hover {
       background: var(--paper-deep);
@@ -174,9 +180,8 @@
 
     .panel-label {
       margin: 0 0 14px;
-      font: 600 12px/1.4 var(--font-body);
-      letter-spacing: .13em;
-      text-transform: uppercase;
+      font-size: 13px;
+      line-height: 1.4;
       color: var(--faded);
     }
 
@@ -196,40 +201,80 @@
     }
 
     .panel-link {
-      display: inline-block;
+      display: inline-flex;
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      min-height: 44px;
       margin-top: 26px;
-      font-size: 16px;
+      padding: 8px 28px;
+      border-top: 2px solid var(--ink);
+      border-bottom: 2px solid var(--ink);
+      background:
+        linear-gradient(90deg, rgba(43,38,32,.10), transparent 18%, transparent 82%, rgba(43,38,32,.10)),
+        var(--paper-deep);
+      color: var(--ink);
+      font-family: var(--font-inscription);
+      font-size: 13px;
+      line-height: 1.2;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      text-decoration: none;
     }
 
-    .book-cards {
+    .panel-link::before,
+    .panel-link::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 14px;
+      height: 34px;
+      transform: translateY(-50%);
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      background: var(--paper);
+    }
+
+    .panel-link::before { left: -9px; }
+    .panel-link::after { right: -9px; }
+
+    .panel-link:hover {
+      color: var(--oxblood);
+      background:
+        linear-gradient(90deg, rgba(94,38,33,.12), transparent 18%, transparent 82%, rgba(94,38,33,.12)),
+        var(--paper-deep);
+    }
+
+    .book-covers {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 14px;
       margin-top: 22px;
+      align-items: start;
     }
 
-    .book-card {
-      min-height: 152px;
-      border: 1px solid var(--ink);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 14px 10px;
-      background: rgba(232, 224, 205, .35);
-    }
-
-    .book-card strong {
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: 15px;
-      line-height: 1.35;
-    }
-
-    .book-card span {
+    .book-cover-link {
       display: block;
-      margin-top: 8px;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .book-cover-link img {
+      display: block;
+      width: min(100%, 122px);
+      height: auto;
+      margin-inline: auto;
+      border: 2px solid var(--ink);
+      background: var(--paper);
+      filter: saturate(.92) contrast(1.02);
+    }
+
+    .book-cover-link span {
+      display: block;
+      max-width: 120px;
+      margin: 10px auto 0;
+      text-align: center;
       font: italic 400 13px/1.35 var(--font-body);
       color: var(--faded);
     }
@@ -249,7 +294,8 @@
       color: var(--paper);
       margin-left: calc(50% - 50vw);
       margin-right: calc(50% - 50vw);
-      padding-block: 88px;
+      padding-block: 112px;
+      border-top: 8px solid var(--ink);
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
     }
 
@@ -263,7 +309,8 @@
     }
 
     .contact .margin-label {
-      color: color-mix(in srgb, var(--paper) 72%, transparent);
+      color: var(--paper);
+      opacity: .74;
     }
 
     .contact-line {
@@ -287,27 +334,17 @@
       text-align: center;
       color: var(--faded);
       font-size: 13px;
+      line-height: 1.5;
     }
 
-    .asterism {
-      margin: 0 0 14px;
-      font-size: 18px;
-      letter-spacing: .2em;
-    }
-
-    .colophon p {
-      margin: 0;
-    }
+    .colophon p { margin: 0; }
 
     @media (prefers-reduced-motion: reduce) {
       .panel:hover { transition: none; }
     }
 
     @media (max-width: 760px) {
-      .page {
-        padding-inline: 20px;
-      }
-
+      .page { padding-inline: 20px; }
       .page::before { display: none; }
 
       .section {
@@ -323,9 +360,7 @@
         padding-top: 36px;
       }
 
-      .hero .kicker {
-        margin-bottom: 36px;
-      }
+      .hero .kicker { margin-bottom: 36px; }
 
       .margin-label {
         display: inline-block;
@@ -334,51 +369,33 @@
         padding-top: 0;
       }
 
-      .section > *:not(.margin-label) {
-        max-width: none;
-      }
-
-      .panels {
-        grid-template-columns: 1fr;
-      }
-
-      .panel {
-        min-height: auto;
-      }
-
-      .contact {
-        padding-block: 64px;
-      }
-
-      .contact-inner {
-        display: block;
-        padding-inline: 20px;
-      }
-
-      .contact-line {
-        max-width: none;
-      }
+      .section > *:not(.margin-label) { max-width: none; }
+      .panels { grid-template-columns: 1fr; }
+      .panel { min-height: auto; }
+      .contact { padding-block: 80px; }
+      .contact-inner { display: block; padding-inline: 20px; }
+      .contact-line { max-width: none; }
     }
 
     @media (max-width: 640px) {
       .panels,
-      .book-cards {
-        grid-template-columns: 1fr;
-      }
+      .book-covers { grid-template-columns: 1fr; }
+
+      .book-cover-link img { width: min(100%, 160px); }
     }
   </style>
 </head>
 <body>
   <main class="page">
     <header class="section hero">
-      <p class="kicker">Chad Wolenhaupt · Author · Franklin, Tennessee</p>
+      <p class="kicker">Retired Founder · Author · Franklin, Tennessee</p>
       <h1 class="name">Chad Wolenhaupt</h1>
       <p class="positioning">For the man who has done a lot of things right and still feels like he's managing a life more than living one.</p>
       <div class="hero-rule" aria-hidden="true"></div>
     </header>
 
     <section class="section pair" aria-labelledby="work-heading">
-      <span class="margin-label" id="work-heading">The work</span>
+      <span class="margin-label margin-label--large" id="work-heading">The work</span>
       <div class="panels">
         <article class="panel panel--writing" id="real-talk">
           <div>
@@ -394,14 +411,14 @@
             <p class="panel-label">The books</p>
             <h2>Two books, a third underway</h2>
             <p><em>The Presence of a Father</em> is about the weight a man carries in the home. <em>The Language of Grace</em> is about the words that restore what shame keeps breaking.</p>
-            <div class="book-cards" aria-label="Books by Chad Wolenhaupt">
-              <a class="book-card" href="https://a.co/d/0dFcuTcg">
-                <strong>The Presence<br>of a Father</strong>
-                <span>Book</span>
+            <div class="book-covers" aria-label="Books by Chad Wolenhaupt">
+              <a class="book-cover-link" href="https://a.co/d/0dFcuTcg">
+                <img src="assets/presence-of-a-father.jpg" alt="Cover of The Presence of a Father by Chad Wolenhaupt" loading="lazy">
+                <span>The Presence of a Father</span>
               </a>
-              <a class="book-card" href="https://a.co/d/0c3pnyS8">
-                <strong>The Language<br>of Grace</strong>
-                <span>Book</span>
+              <a class="book-cover-link" href="https://a.co/d/0c3pnyS8">
+                <img src="assets/language-of-grace.jpg" alt="Cover of Language of Grace by Chad Wolenhaupt" loading="lazy">
+                <span>Language of Grace</span>
               </a>
             </div>
           </div>
@@ -411,9 +428,9 @@
     </section>
 
     <section class="section about" aria-labelledby="about-heading">
-      <span class="margin-label" id="about-heading">About</span>
+      <span class="margin-label margin-label--large" id="about-heading">About</span>
       <div class="about-body">
-        <p>Chad Wolenhaupt is an author, retired founder, and builder in the second half of life. After selling three businesses, he writes about the places where achievement stops answering the deeper questions: work, fatherhood, faith, discipline, drift, and the cost of living by momentum. He lives in Franklin, Tennessee with his wife, Michele.</p>
+        <p>Chad Wolenhaupt is an author, retired founder, and builder calling people toward a more intentional life. After building and selling three businesses, he began speaking to the gap many successful people know but rarely name: the distance between what they have achieved and who they are becoming. His work challenges people to rebuild the inner life, strengthen the home, recover discipline, and live with legacy in view. He lives in Franklin, Tennessee with his wife, Michele.</p>
       </div>
     </section>
 
