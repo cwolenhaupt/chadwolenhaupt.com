@@ -1,483 +1,430 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chad Wolenhaupt</title>
-  <meta name="description" content="Chad Wolenhaupt is an author, retired founder, and builder calling people toward a more intentional life." />
-  <link rel="canonical" href="https://chadwolenhaupt.com/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Chad Wolenhaupt" />
-  <meta property="og:description" content="Author, retired founder, and builder calling people toward a more intentional life." />
-  <meta property="og:url" content="https://chadwolenhaupt.com/" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chad Wolenhaupt" />
-  <meta name="twitter:description" content="Author, retired founder, and builder calling people toward a more intentional life." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Marcellus&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='8' y='8' width='48' height='48' fill='%23E3DBC7' stroke='%232B2620' stroke-width='2'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-size='32' fill='%232B2620'%3EW%3C/text%3E%3C/svg%3E">
-  <style>
-    :root {
-      --ink: #2B2620;
-      --paper: #E3DBC7;
-      --paper-deep: #D7CCB2;
-      --oxblood: #5E2621;
-      --rust: #9B4A2B;
-      --faded: #6B6459;
-      --font-display: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
-      --font-body: 'Source Serif 4', Georgia, serif;
-      --font-inscription: 'Marcellus', Georgia, serif;
-      --measure: 66ch;
-      --space: 8px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chad Wolenhaupt</title>
+<meta name="description" content="Chad Wolenhaupt is an author, retired founder, and builder calling people toward a more intentional life. Weekly writing at Real Talk, and the books The Presence of a Father and The Language of Grace.">
+<link rel="canonical" href="https://chadwolenhaupt.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chad Wolenhaupt">
+<meta property="og:description" content="Author, retired founder, and builder calling people toward a more intentional life.">
+<meta property="og:url" content="https://chadwolenhaupt.com/">
+<meta property="og:image" content="https://chadwolenhaupt.com/assets/about-hero-minimal.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Chad Wolenhaupt">
+<meta name="twitter:description" content="Author, retired founder, and builder calling people toward a more intentional life.">
+<meta name="twitter:image" content="https://chadwolenhaupt.com/assets/about-hero-minimal.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='8' y='8' width='48' height='48' fill='%23f4efe6' stroke='%23211d18' stroke-width='2'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-size='32' fill='%23211d18'%3EW%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --paper: #f4efe6;
+    --paper-dim: #ece4d6;
+    --ink: #211d18;
+    --ink-soft: #4d463d;
+    --rule: #d9cdb9;
+    --accent: #8a3324;
+    --measure: 66ch;
+  }
 
-    * { box-sizing: border-box; }
+  * { box-sizing: border-box; }
 
-    html {
-      background: var(--paper);
-      color: var(--ink);
-    }
+  html { -webkit-text-size-adjust: 100%; }
 
-    body {
-      min-height: 100vh;
-      margin: 0;
-      background-color: var(--paper);
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.028'/%3E%3C/svg%3E");
-      font-family: var(--font-body);
-      font-size: 17px;
-      line-height: 1.65;
-      color: var(--ink);
-      text-rendering: optimizeLegibility;
-      -webkit-font-smoothing: antialiased;
-    }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
 
-    a {
-      color: var(--ink);
-      text-decoration: underline;
-      text-decoration-color: var(--oxblood);
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-    }
+  img { max-width: 100%; display: block; height: auto; }
 
-    a:hover { color: var(--oxblood); }
+  a {
+    color: var(--accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+  }
 
-    a:focus-visible {
-      outline: 2px solid var(--oxblood);
-      outline-offset: 3px;
-    }
+  a:hover { color: var(--ink); }
 
-    .page {
-      position: relative;
-      max-width: 900px;
-      margin-inline: auto;
-      padding-inline: 24px;
-    }
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
 
-    .page::before {
-      content: "";
-      position: absolute;
-      top: 96px;
-      bottom: 48px;
-      left: 196px;
-      width: 1px;
-      background: var(--faded);
-      opacity: .55;
-      pointer-events: none;
-    }
+  .skip-link:focus {
+    left: 1rem !important;
+    top: 1rem !important;
+  }
 
-    .section {
-      display: grid;
-      grid-template-columns: 172px 1fr;
-      column-gap: 48px;
-      padding-block: 72px;
-    }
+  .wrap {
+    width: 100%;
+    max-width: 76rem;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 4vw, 3rem);
+  }
 
-    .section > *:not(.margin-label) {
-      grid-column: 2;
-      max-width: var(--measure);
-    }
+  .rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 0;
+  }
 
-    .kicker,
-    .margin-label,
-    .panel-label,
-    .colophon {
-      font-family: var(--font-inscription);
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: .18em;
-    }
+  .rule--thick {
+    border-top: 2px solid var(--ink);
+  }
 
-    .margin-label {
-      grid-column: 1;
-      justify-self: end;
-      text-align: right;
-      font-size: 13px;
-      line-height: 1.5;
-      color: var(--faded);
-      padding-top: 4px;
-    }
+  .eyebrow {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
 
-    .margin-label--large {
-      font-size: 20px;
-      line-height: 1.25;
-    }
+  /* ---------- header ---------- */
 
-    .hero {
-      padding-top: 56px;
-      padding-bottom: 84px;
-    }
+  header.site-head {
+    padding-top: clamp(1.5rem, 4vw, 2.75rem);
+  }
 
-    .hero .kicker {
-      grid-column: 1 / -1;
-      max-width: none;
-      margin: 0 0 58px;
-      font-size: 20px;
-      line-height: 1.35;
-      color: var(--faded);
-    }
+  .head-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    padding-bottom: clamp(1.25rem, 3vw, 2rem);
+  }
 
-    .name {
-      margin: 0;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(40px, 6vw, 58px);
-      line-height: 1.1;
-      letter-spacing: -0.025em;
-      color: var(--ink);
-    }
+  .site-name {
+    margin: 0.35rem 0 0;
+    font-size: clamp(1.9rem, 4vw + 0.5rem, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
 
-    .positioning {
-      max-width: 34ch;
-      margin: 28px 0 0;
-      font: 400 clamp(19px, 2.2vw, 22px)/1.6 var(--font-body);
-      color: var(--ink);
-    }
+  nav.site-nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.5rem;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+  }
 
-    .hero-rule {
-      width: min(100%, 560px);
-      margin-top: 40px;
-      border-top: 6px solid var(--ink);
-    }
+  nav.site-nav a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.15rem;
+  }
 
-    .panels {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      max-width: none;
-    }
+  nav.site-nav a:hover,
+  nav.site-nav a:focus-visible {
+    border-bottom-color: var(--accent);
+    color: var(--accent);
+  }
 
-    .panel {
-      border: 2px solid var(--ink);
-      border-radius: 0;
-      padding: 28px 24px 24px;
-      background: transparent;
-      min-height: 392px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+  /* ---------- opening ---------- */
 
-    .panel--writing { border-top: 4px solid var(--rust); }
-    .panel--books { border-top: 4px solid var(--oxblood); }
+  .opening {
+    padding: clamp(2.5rem, 7vw, 5rem) 0 clamp(2rem, 5vw, 3rem);
+  }
 
-    .panel:hover {
-      background: var(--paper-deep);
-      transition: background .15s ease;
-    }
+  .opening p {
+    margin: 0;
+    max-width: 44ch;
+    font-size: clamp(1.5rem, 2.6vw + 1rem, 2.4rem);
+    line-height: 1.32;
+    font-style: italic;
+    font-weight: 500;
+  }
 
-    .panel-label {
-      margin: 0 0 14px;
-      font-size: 13px;
-      line-height: 1.4;
-      color: var(--faded);
-    }
+  /* ---------- letter ---------- */
 
-    .panel h2 {
-      margin: 0 0 18px;
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: 22px;
-      line-height: 1.25;
-      color: var(--ink);
-    }
+  .letter {
+    padding: clamp(2.5rem, 6vw, 4rem) 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 3rem);
+  }
 
-    .panel p {
-      margin: 0;
-      font: 400 16px/1.65 var(--font-body);
-      color: var(--ink);
-    }
+  .letter-copy p {
+    max-width: var(--measure);
+    font-size: clamp(1.05rem, 0.4vw + 1rem, 1.2rem);
+    color: var(--ink-soft);
+    margin: 0 0 1.15em;
+  }
 
-    .rt-thumbnail {
-      display: block;
-      margin-top: 22px;
-      color: var(--ink);
-      text-decoration: none;
-    }
+  .letter-copy p:last-child { margin-bottom: 0; }
 
-    .rt-thumbnail img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 3 / 2;
-      object-fit: contain;
-      object-position: center;
-      padding: 18px;
-      border: 2px solid var(--ink);
-      background: #141a1b;
-      filter: saturate(.9) contrast(1.02);
-    }
+  .letter-copy .signature {
+    margin-top: 1.5em;
+    font-style: italic;
+    color: var(--ink);
+  }
 
-    .rt-thumbnail:hover img {
-      filter: saturate(.96) contrast(1.04);
-    }
+  /* ---------- paths / spread ---------- */
 
-    .panel-link {
-      display: inline-flex;
-      position: relative;
-      align-items: center;
-      justify-content: center;
-      width: fit-content;
-      min-height: 44px;
-      margin-top: 26px;
-      padding: 8px 28px;
-      border-top: 2px solid var(--ink);
-      border-bottom: 2px solid var(--ink);
-      background:
-        linear-gradient(90deg, rgba(43,38,32,.10), transparent 18%, transparent 82%, rgba(43,38,32,.10)),
-        var(--paper-deep);
-      color: var(--ink);
-      font-family: var(--font-inscription);
-      font-size: 13px;
-      line-height: 1.2;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-      text-decoration: none;
-    }
+  .spread {
+    padding: clamp(2.5rem, 6vw, 4rem) 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(2.5rem, 6vw, 3rem);
+  }
 
-    .panel-link::before,
-    .panel-link::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      width: 14px;
-      height: 34px;
-      transform: translateY(-50%);
-      border: 2px solid var(--ink);
-      border-radius: 999px;
-      background: var(--paper);
-    }
+  .path h3 {
+    margin: 0 0 0.6rem;
+    font-size: clamp(1.3rem, 1vw + 1.1rem, 1.6rem);
+  }
 
-    .panel-link::before { left: -9px; }
-    .panel-link::after { right: -9px; }
+  .path h3 a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+  }
 
-    .panel-link:hover {
-      color: var(--oxblood);
-      background:
-        linear-gradient(90deg, rgba(94,38,33,.12), transparent 18%, transparent 82%, rgba(94,38,33,.12)),
-        var(--paper-deep);
-    }
+  .path h3 a:hover,
+  .path h3 a:focus-visible {
+    color: var(--accent);
+  }
 
-    .book-covers {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin-top: 22px;
+  .path p {
+    color: var(--ink-soft);
+    max-width: 42ch;
+    margin: 0 0 1.1rem;
+  }
+
+  .path p a {
+    color: var(--accent);
+    font-style: normal;
+  }
+
+  .path .path-link {
+    display: inline-block;
+    font-weight: 600;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+  }
+
+  .path-mark {
+    width: clamp(48px, 8vw, 64px);
+    margin-bottom: 1rem;
+    border-radius: 3px;
+  }
+
+  .book-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .book-row a {
+    display: block;
+    width: clamp(88px, 18vw, 118px);
+    flex: none;
+  }
+
+  .book-row img {
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(33, 29, 24, 0.25);
+  }
+
+  .book-row figcaption {
+    margin-top: 0.4rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    line-height: 1.3;
+  }
+
+  .book-row figure { margin: 0; }
+
+  /* ---------- contact ---------- */
+
+  .contact h2 {
+    font-size: clamp(1.1rem, 0.6vw + 1rem, 1.3rem);
+    margin: 0 0 1.25rem;
+  }
+
+  .contact {
+    padding: clamp(2.25rem, 4vw, 3rem) 0 clamp(2.5rem, 5vw, 3.5rem);
+  }
+
+  .contact p {
+    max-width: var(--measure);
+    color: var(--ink-soft);
+    margin: 0 0 1.25rem;
+    font-size: 1.05rem;
+  }
+
+  .contact .email-link {
+    font-size: clamp(1.3rem, 1.6vw + 0.9rem, 1.8rem);
+    font-weight: 600;
+    text-decoration-color: var(--accent);
+  }
+
+  /* ---------- footer ---------- */
+
+  footer.site-foot {
+    padding: clamp(2rem, 5vw, 3rem) 0 clamp(2.5rem, 6vw, 4rem);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.75rem 2rem;
+  }
+
+  footer.site-foot .signoff {
+    font-style: italic;
+  }
+
+  footer.site-foot .place {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- wide layout ---------- */
+
+  @media (min-width: 760px) {
+    .letter {
+      grid-template-columns: 1.4fr 1fr;
       align-items: start;
     }
 
-    .book-cover-link {
-      display: block;
-      text-decoration: none;
-      color: var(--ink);
+    .letter-copy { order: 1; }
+    .letter-photo { order: 2; padding-top: 0.35rem; }
+
+    .spread {
+      grid-template-columns: 1fr 1fr;
     }
 
-    .book-cover-link img {
-      display: block;
-      width: min(100%, 122px);
-      height: auto;
-      margin-inline: auto;
-      border: 2px solid var(--ink);
-      background: var(--paper);
-      filter: saturate(.92) contrast(1.02);
+    .path--realtalk {
+      padding-right: clamp(1.5rem, 3vw, 2.5rem);
+      border-right: 1px solid var(--rule);
     }
 
-    .book-cover-link span {
-      display: block;
-      max-width: 120px;
-      margin: 10px auto 0;
-      text-align: center;
-      font: italic 400 13px/1.35 var(--font-body);
-      color: var(--faded);
+    .path--books {
+      padding-left: clamp(1.5rem, 3vw, 2.5rem);
     }
+  }
 
-    .about-body p {
-      margin: 0;
-      font-size: 18px;
-      line-height: 1.75;
-      color: var(--ink);
-    }
+  @media (min-width: 1080px) {
+    .opening p { max-width: 50ch; }
+  }
 
-    .contact {
-      position: relative;
-      z-index: 1;
-      width: 100vw;
-      background: var(--ink);
-      color: var(--paper);
-      margin-left: calc(50% - 50vw);
-      margin-right: calc(50% - 50vw);
-      padding-block: 112px;
-      border-top: 8px solid var(--ink);
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
-    }
+  @media (prefers-reduced-motion: no-preference) {
+    a { transition: color 0.15s ease, border-color 0.15s ease; }
+  }
 
-    .contact-inner {
-      width: min(900px, 100%);
-      margin-inline: auto;
-      padding-inline: 24px;
-      display: grid;
-      grid-template-columns: 172px 1fr;
-      column-gap: 48px;
-    }
+  @media (prefers-reduced-motion: reduce) {
+    * { scroll-behavior: auto !important; }
+  }
 
-    .contact .margin-label {
-      color: var(--paper);
-      opacity: .74;
-    }
-
-    .contact-line {
-      grid-column: 2;
-      max-width: 40ch;
-      margin: 0;
-      color: var(--paper);
-      font: 400 19px/1.7 var(--font-body);
-    }
-
-    .contact a {
-      color: var(--paper);
-      text-decoration-color: var(--rust);
-    }
-
-    .contact a:hover { color: #fff7e6; }
-
-    .colophon {
-      display: block;
-      padding-block: 48px;
-      text-align: center;
-      color: var(--faded);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .colophon p { margin: 0; }
-
-    @media (prefers-reduced-motion: reduce) {
-      .panel:hover { transition: none; }
-    }
-
-    @media (max-width: 760px) {
-      .page { padding-inline: 20px; }
-      .page::before { display: none; }
-
-      .section {
-        display: block;
-        padding-block: 56px;
-        border-left: 1px solid color-mix(in srgb, var(--faded) 55%, transparent);
-        padding-left: 20px;
-      }
-
-      .hero {
-        border-left: 0;
-        padding-left: 0;
-        padding-top: 36px;
-      }
-
-      .hero .kicker { margin-bottom: 36px; }
-
-      .margin-label {
-        display: inline-block;
-        text-align: left;
-        margin-bottom: 18px;
-        padding-top: 0;
-      }
-
-      .section > *:not(.margin-label) { max-width: none; }
-      .panels { grid-template-columns: 1fr; }
-      .panel { min-height: auto; }
-      .contact { padding-block: 80px; }
-      .contact-inner { display: block; padding-inline: 20px; }
-      .contact-line { max-width: none; }
-    }
-
-    @media (max-width: 640px) {
-      .panels,
-      .book-covers { grid-template-columns: 1fr; }
-
-      .book-cover-link img { width: min(100%, 160px); }
-    }
-  </style>
+  html { scroll-behavior: smooth; }
+</style>
 </head>
 <body>
-  <main class="page">
-    <header class="section hero">
-      <p class="kicker">Retired Founder · Author · Franklin, Tennessee</p>
-      <h1 class="name">Chad Wolenhaupt</h1>
-      <p class="positioning">For the man who has done a lot of things right and still feels like he's managing a life more than living one.</p>
-      <div class="hero-rule" aria-hidden="true"></div>
-    </header>
 
-    <section class="section pair" aria-labelledby="work-heading">
-      <span class="margin-label margin-label--large" id="work-heading">The work</span>
-      <div class="panels">
-        <article class="panel panel--writing" id="real-talk">
-          <div>
-            <p class="panel-label">The writing</p>
-            <h2>Real Talk</h2>
-            <p>Weekly writing for second-half men who checked the boxes and still feel off. It is not a performance of certainty. It is a place to tell the truth about drift, fatherhood, work, faith, and the life underneath the résumé.</p>
-            <a class="rt-thumbnail" href="https://chadsrealtalk.substack.com" aria-label="Open Real Talk on Substack">
-              <img src="assets/real-talk-publication-thumbnail.png" alt="Real Talk publication thumbnail" loading="lazy">
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:auto; background:var(--ink); color:var(--paper); padding:0.6rem 1rem; z-index:10;">Skip to content</a>
+
+<div class="wrap">
+  <header class="site-head">
+    <p class="eyebrow">Retired Founder &middot; Author &middot; Franklin, Tennessee</p>
+    <div class="head-row">
+      <h1 class="site-name">Chad Wolenhaupt</h1>
+      <nav class="site-nav" aria-label="Section">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#real-talk">Real Talk</a></li>
+          <li><a href="#books">Books</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <hr class="rule rule--thick">
+
+  <main id="main">
+
+    <section class="opening" aria-label="Opening">
+      <p>For the man who has done a lot of things right and still feels like he&rsquo;s managing a life more than living one.</p>
+    </section>
+
+    <hr class="rule">
+
+    <section class="letter" id="about" aria-label="About">
+      <div class="letter-copy">
+        <p>Chad Wolenhaupt is an author, retired founder, and builder calling people toward a more intentional life. After building and selling three businesses, he began speaking to the gap many successful people know but rarely name: the distance between what they have achieved and who they are becoming.</p>
+        <p>His work challenges people to rebuild the inner life, strengthen the home, recover discipline, and live with legacy in view.</p>
+        <p class="signature">He lives in Franklin, Tennessee with his wife, Michele.</p>
+      </div>
+      <div class="letter-photo">
+        <img src="assets/about-hero-minimal.png" alt="Real Talk cover card reading &quot;Inspect the life. Keep becoming.&quot;">
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section class="spread" aria-labelledby="real-talk-heading books-heading">
+      <div class="path path--realtalk" id="real-talk">
+        <img class="path-mark" src="assets/real-talk-publication-thumbnail.png" alt="Real Talk mark">
+        <h3 id="real-talk-heading"><a href="https://chadsrealtalk.substack.com">Real Talk</a></h3>
+        <p>Weekly writing for second-half men who checked the boxes and still feel off. It is not a performance of certainty. It is a place to tell the truth about drift, fatherhood, work, faith, and the life underneath the r&eacute;sum&eacute;.</p>
+        <p><a class="path-link" href="https://chadsrealtalk.substack.com">Read Real Talk on Substack &rarr;</a></p>
+      </div>
+
+      <div class="path path--books" id="books">
+        <h3 id="books-heading">Books</h3>
+        <p><a href="https://a.co/d/0dFcuTcg">The Presence of a Father</a> is about the weight a man carries in the home. <a href="https://a.co/d/0c3pnyS8">The Language of Grace</a> is about the words that restore what shame keeps breaking.</p>
+        <div class="book-row">
+          <figure>
+            <a href="https://a.co/d/0dFcuTcg">
+              <img src="assets/presence-of-a-father.jpg" alt="Cover of The Presence of a Father by Chad Wolenhaupt">
             </a>
-          </div>
-          <a class="panel-link" href="https://chadsrealtalk.substack.com">Read Real Talk →</a>
-        </article>
-
-        <article class="panel panel--books" id="books">
-          <div>
-            <p class="panel-label">The books</p>
-            <h2>Two books, a third underway</h2>
-            <p><em>The Presence of a Father</em> is about the weight a man carries in the home. <em>The Language of Grace</em> is about the words that restore what shame keeps breaking.</p>
-            <div class="book-covers" aria-label="Books by Chad Wolenhaupt">
-              <a class="book-cover-link" href="https://a.co/d/0dFcuTcg">
-                <img src="assets/presence-of-a-father.jpg" alt="Cover of The Presence of a Father by Chad Wolenhaupt" loading="lazy">
-                <span>The Presence of a Father</span>
-              </a>
-              <a class="book-cover-link" href="https://a.co/d/0c3pnyS8">
-                <img src="assets/language-of-grace.jpg" alt="Cover of Language of Grace by Chad Wolenhaupt" loading="lazy">
-                <span>Language of Grace</span>
-              </a>
-            </div>
-          </div>
-          <a class="panel-link" href="https://a.co/d/0dFcuTcg">See the books →</a>
-        </article>
+            <figcaption>The Presence of a Father</figcaption>
+          </figure>
+          <figure>
+            <a href="https://a.co/d/0c3pnyS8">
+              <img src="assets/language-of-grace.jpg" alt="Cover of The Language of Grace by Chad Wolenhaupt">
+            </a>
+            <figcaption>The Language of Grace</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
-    <section class="section about" aria-labelledby="about-heading">
-      <span class="margin-label margin-label--large" id="about-heading">About</span>
-      <div class="about-body">
-        <p>Chad Wolenhaupt is an author, retired founder, and builder calling people toward a more intentional life. After building and selling three businesses, he began speaking to the gap many successful people know but rarely name: the distance between what they have achieved and who they are becoming. His work challenges people to rebuild the inner life, strengthen the home, recover discipline, and live with legacy in view. He lives in Franklin, Tennessee with his wife, Michele.</p>
-      </div>
+    <hr class="rule">
+
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <p>No forms, no funnel. If something here landed, write to me.</p>
+      <p><a class="email-link" href="mailto:CWolenhaupt@gmail.com">CWolenhaupt@gmail.com</a></p>
     </section>
 
-    <section class="contact" aria-labelledby="contact-heading">
-      <div class="contact-inner">
-        <span class="margin-label" id="contact-heading">Write to me</span>
-        <p class="contact-line">No forms, no funnel. If something here landed, write to me.<br><a href="mailto:CWolenhaupt@gmail.com">CWolenhaupt@gmail.com</a></p>
-      </div>
-    </section>
-
-    <footer class="section colophon">
-      <p>Chad Wolenhaupt · Franklin, Tennessee · 2026</p>
-    </footer>
   </main>
+
+  <hr class="rule rule--thick">
+
+  <footer class="site-foot">
+    <p class="signoff">Chad Wolenhaupt</p>
+    <p class="place">Franklin, Tennessee</p>
+  </footer>
+</div>
+
 </body>
 </html>
