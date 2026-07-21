@@ -63,6 +63,18 @@
     top: 1rem !important;
   }
 
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
   .wrap {
     width: 100%;
     max-width: 76rem;
@@ -150,6 +162,29 @@
     font-weight: 500;
   }
 
+  /* React Bits-inspired Blur Text, implemented without a framework. */
+  .blur-reveal .reveal-word {
+    display: inline-block;
+    will-change: opacity, filter, transform;
+  }
+
+  .blur-reveal.is-prepared .reveal-word {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(0.32em);
+    transition:
+      opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 680ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: calc(var(--word-index) * 28ms);
+  }
+
+  .blur-reveal.is-visible .reveal-word {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+
   /* ---------- letter ---------- */
 
   .letter {
@@ -172,6 +207,27 @@
     margin-top: 1.5em;
     font-style: italic;
     color: var(--ink);
+  }
+
+  /* React Bits-inspired Fade Content for the three major page movements. */
+  .reveal-section.reveal-ready {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(12px);
+    transition:
+      opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 700ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal-section.reveal-ready.is-revealed {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+
+  .reveal-section--fade.reveal-ready {
+    transform: none;
   }
 
   /* ---------- paths / spread ---------- */
@@ -332,6 +388,14 @@
 
   @media (prefers-reduced-motion: reduce) {
     * { scroll-behavior: auto !important; }
+
+    .blur-reveal .reveal-word,
+    .reveal-section.reveal-ready {
+      opacity: 1 !important;
+      filter: none !important;
+      transform: none !important;
+      transition: none !important;
+    }
   }
 
   html { scroll-behavior: smooth; }
@@ -362,12 +426,12 @@
   <main id="main">
 
     <section class="opening" aria-label="Opening">
-      <p>For the man who has done a lot of things right and still feels like he&rsquo;s managing a life more than living one.</p>
+      <p class="blur-reveal">For the man who has done a lot of things right and still feels like he&rsquo;s managing a life more than living one.</p>
     </section>
 
     <hr class="rule">
 
-    <section class="letter" id="about" aria-label="About">
+    <section class="letter reveal-section" id="about" aria-label="About">
       <div class="letter-copy">
         <p>Chad Wolenhaupt is an author, retired founder, and builder calling people toward a more intentional life. After building and selling three businesses, he began speaking to the gap many successful people know but rarely name: the distance between what they have achieved and who they are becoming.</p>
         <p>His work challenges people to rebuild the inner life, strengthen the home, recover discipline, and live with legacy in view.</p>
@@ -380,7 +444,7 @@
 
     <hr class="rule">
 
-    <section class="spread" aria-labelledby="real-talk-heading books-heading">
+    <section class="spread reveal-section" aria-labelledby="real-talk-heading books-heading">
       <div class="path path--realtalk" id="real-talk">
         <img class="path-mark" src="assets/real-talk-publication-thumbnail.png" alt="Real Talk mark">
         <h3 id="real-talk-heading"><a href="https://chadsrealtalk.substack.com">Real Talk</a></h3>
@@ -410,7 +474,7 @@
 
     <hr class="rule">
 
-    <section class="contact" id="contact" aria-labelledby="contact-heading">
+    <section class="contact reveal-section reveal-section--fade" id="contact" aria-labelledby="contact-heading">
       <h2 id="contact-heading">Contact</h2>
       <p>No forms, no funnel. If something here landed, write to me.</p>
       <p><a class="email-link" href="mailto:CWolenhaupt@gmail.com">CWolenhaupt@gmail.com</a></p>
@@ -425,6 +489,61 @@
     <p class="place">Franklin, Tennessee</p>
   </footer>
 </div>
+
+<script>
+  (() => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const saveData = navigator.connection && navigator.connection.saveData;
+
+    if (reduceMotion || saveData) return;
+
+    const opening = document.querySelector('.blur-reveal');
+    if (opening) {
+      const text = opening.textContent.trim();
+      const words = text.split(/\s+/);
+      opening.textContent = '';
+
+      const accessibleText = document.createElement('span');
+      accessibleText.className = 'sr-only';
+      accessibleText.textContent = text;
+      opening.appendChild(accessibleText);
+
+      words.forEach((word, index) => {
+        const span = document.createElement('span');
+        span.className = 'reveal-word';
+        span.setAttribute('aria-hidden', 'true');
+        span.style.setProperty('--word-index', index);
+        span.textContent = word;
+        opening.appendChild(span);
+        if (index < words.length - 1) opening.appendChild(document.createTextNode(' '));
+      });
+
+      opening.classList.add('is-prepared');
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => opening.classList.add('is-visible'));
+      });
+    }
+
+    const sections = document.querySelectorAll('.reveal-section');
+    if (!('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-revealed');
+        observer.unobserve(entry.target);
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -8% 0px'
+    });
+
+    sections.forEach((section) => {
+      section.classList.add('reveal-ready');
+      observer.observe(section);
+    });
+  })();
+</script>
 
 </body>
 </html>
